@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 const Pokemon = mongoose.model("Pokemon", {
-    pokedexId: Number,
+    pokedexId: String,
     name: String,
     type1: String,
     type2: String,
