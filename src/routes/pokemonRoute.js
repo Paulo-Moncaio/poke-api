@@ -9,7 +9,7 @@ mongoose.connect("mongodb://localhost:27017/Pokemon")
 router.get('', async (request, response) => {
     const { name } = request.query
 
-    const pokemons = await Pokemon.find({ name: new RegExp(name, 'i') });
+    const pokemons = await Pokemon.find({ name: new RegExp(`^${name}`, 'i') });
 
     if (!pokemons) {
         return response.status(404).json({ error: "pokemon nao encontrado" })
